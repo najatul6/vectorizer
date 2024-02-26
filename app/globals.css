@@ -340,7 +340,26 @@
     @apply flex flex-col gap-5 lg:flex-row lg:gap-10;
   }
 
+  .media-uploader-field {
+    @apply grid h-fit min-h-[200px] grid-cols-1 gap-5 py-4 md:grid-cols-2;
+  }
 
+  /* TransformedImage Component */
+  .download-btn {
+    @apply p-14-medium mt-2 flex items-center gap-2 px-2;
+  }
+
+  .transformed-image {
+    @apply h-fit min-h-72 w-full rounded-[10px] border border-dashed bg-purple-100/20 object-cover p-2;
+  }
+
+  .transforming-loader {
+    @apply flex-center absolute left-[50%] top-[50%] size-full -translate-x-1/2 -translate-y-1/2 flex-col gap-2 rounded-[10px] border bg-dark-700/90;
+  }
+
+  .transformed-placeholder {
+    @apply flex-center p-14-medium h-full min-h-72 flex-col gap-5 rounded-[16px] border border-dashed bg-purple-100/20 shadow-inner;
+  }
 }
 
 /* =====  CLERK OVERRIDES */
