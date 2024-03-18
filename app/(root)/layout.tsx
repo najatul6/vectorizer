@@ -1,10 +1,11 @@
+import MobileNav from "@/components/shared/MobileNav";
 import Sidebar from "@/components/shared/Sidebar";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="root">
       <Sidebar/>
-      {/* <MobileNavbar/> */}
+      <MobileNav/>
       <div className="root-container">
         <div className="wrapper">{children}</div>
       </div>
