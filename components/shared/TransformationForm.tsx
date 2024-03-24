@@ -115,14 +115,14 @@ const TransformationForm = ({
 
   // TODO: Return to update credits
   const onTransformHandler = async () => {
-    setIsTransforming(true)
+    setIsTransforming(true);
     setTransformationConfig(
-      deepMergeObjects(newTransformation,transformationConfig)
-    )
-    setNewTransformation(null)
-    startTransition(async()=>{
+      deepMergeObjects(newTransformation, transformationConfig)
+    );
+    setNewTransformation(null);
+    startTransition(async () => {
       // await updateCredits(userId,creditFee,)
-    })
+    });
   };
 
   return (
@@ -213,22 +213,20 @@ const TransformationForm = ({
         )}
 
         <div className="media-uploader-field">
-                    <CustomField
-                    control={form.control}
-                    name="publicId"
-                    className="flex size-full flex-col"
-                    render={({field})=>(
-                      <MediaUploader 
-                      onValueChange={field.onChange}
-                      setImage= {setImage}
-                      publicId={field.value}
-                      image={image}
-                      type={type}
-                      
-                      />
-                    )}
-                    
-                    />
+          <CustomField
+            control={form.control}
+            name="publicId"
+            className="flex size-full flex-col"
+            render={({ field }) => (
+              <MediaUploader
+                onValueChange={field.onChange}
+                setImage={setImage}
+                publicId={field.value}
+                image={image}
+                type={type}
+              />
+            )}
+          />
         </div>
 
         <div className="flex flex-col gap-4">
