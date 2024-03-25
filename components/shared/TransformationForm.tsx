@@ -114,7 +114,7 @@ const TransformationForm = ({
     }, 1000);
   };
 
-  // TODO: Return to update credits
+  // TODO: Update credits fee to something else
   const onTransformHandler = async () => {
     setIsTransforming(true);
     setTransformationConfig(
@@ -122,7 +122,7 @@ const TransformationForm = ({
     );
     setNewTransformation(null);
     startTransition(async () => {
-      // await updateCredits(userId,creditFee,)
+      await updateCredits(userId,-1)
     });
   };
 
