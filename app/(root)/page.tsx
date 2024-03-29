@@ -1,8 +1,11 @@
+import { Collection } from "@/components/shared/Collection";
 import { navLinks } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 
-const Home = () => {
+const Home = ({searchParams}:SearchParamProps) => {
+  const page = Number(searchParams?.page) || 1;
+  const searchQuery = (searchParams?.query as string) || ''
   return (
     <>
       <section className="home">
@@ -29,6 +32,10 @@ const Home = () => {
           </Link>
         ))}
       </ul>
+      </section>
+
+      <section className="sm:mt-12">
+          <Collection/>
       </section>
     </>
   );
