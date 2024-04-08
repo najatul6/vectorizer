@@ -151,7 +151,7 @@ const TransformationForm = ({
     const imageSize = aspectRatioOptions[value as AspectRatioKey];
     setImage((prevState: any) => ({
       ...prevState,
-      aspectRation: imageSize.aspectRatio,
+      aspectRatio: imageSize.aspectRatio,
       width: imageSize.width,
       height: imageSize.height,
     }));
@@ -173,8 +173,9 @@ const TransformationForm = ({
           [fieldName === "prompt" ? "prompt" : "to"]: value,
         },
       }));
-      return onChangeField(value);
-    }, 1000);
+    }, 1000)();
+
+    return onChangeField(value);
   };
 
   const onTransformHandler = async () => {
@@ -189,8 +190,8 @@ const TransformationForm = ({
   };
 
   useEffect(() => {
-    if(image && (type==='restore' || type === 'removeBackground')){
-      setNewTransformation(transformationType.config)
+    if (image && (type === "restore" || type === "removeBackground")) {
+      setNewTransformation(transformationType.config);
     }
   }, [image, transformationType.config, type]);
 
@@ -216,6 +217,7 @@ const TransformationForm = ({
                 onValueChange={(value) =>
                   onSelectFieldHandler(value, field.onChange)
                 }
+                value={field.value}
               >
                 <SelectTrigger className="select-field">
                   <SelectValue placeholder="Select Size" />
